@@ -13,6 +13,8 @@
 ## Servidor com fastify
 
 `npm install fastify`
+### modulo para lidar com cookie no fastify
+ `npm i @fatify/cookie`
 
 ## Docker
 

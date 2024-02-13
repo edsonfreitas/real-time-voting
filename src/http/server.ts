@@ -1,15 +1,26 @@
 import { fastify } from 'fastify';
+import cookie from '@fastify/cookie'
 import { createPoll } from './routes/create-poll'
 import { getPoll } from './routes/get-poll'
+import { voteOnPoll } from './routes/vote-on-poll';
 
 const PORT = 3333
 
 const app = fastify();
 
-//Registra rota no fastify
+//Cookie
+app.register(cookie, {
+  secret: "iekooc-oriemirp-orifnoc",
+  hook: 'onRequest',
+});
 
-app.register(createPoll)
-app.register(getPoll)
+//Routes
+
+
+//Registra rota no fastify
+app.register(createPoll);
+app.register(getPoll);
+app.register(voteOnPoll);
 
 // Start server
 app.listen({ port: PORT }).then(()=>{
