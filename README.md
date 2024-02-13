@@ -9,6 +9,11 @@
 
 `npx tsc --init`
 `npm install tsx -D` -> Converte typeScript para javasScript de forma automatizada.
+## Bancos de dados utilizados
+  Postgres e o redis
+  O redis é muito utilizado para sistemas de gameficação e rankeamento, por trazer um sistema interno de rankeamento muito eficiente.
+  ### Biblioteca para manipular o redis no NodeJS
+  `npm i ioredis`
 
 ## Servidor com fastify
 
