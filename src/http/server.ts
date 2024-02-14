@@ -3,6 +3,8 @@ import cookie from '@fastify/cookie'
 import { createPoll } from './routes/create-poll'
 import { getPoll } from './routes/get-poll'
 import { voteOnPoll } from './routes/vote-on-poll';
+import { fastifyWebsocket } from '@fastify/websocket';
+import { pollResults } from './ws/poll-results';
 
 const PORT = 3333
 
@@ -14,13 +16,14 @@ app.register(cookie, {
   hook: 'onRequest',
 });
 
-//Routes
-
+//Route websocket
+app.register(fastifyWebsocket)
 
 //Registra rota no fastify
 app.register(createPoll);
 app.register(getPoll);
 app.register(voteOnPoll);
+app.register(pollResults);
 
 // Start server
 app.listen({ port: PORT }).then(()=>{

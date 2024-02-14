@@ -20,6 +20,8 @@
 `npm install fastify`
 ### modulo para lidar com cookie no fastify
  `npm i @fatify/cookie`
+ ### modulo para lidar com requisição realtime websocket
+ `npm i @fastify/websocket`
 
 ## Docker
 
